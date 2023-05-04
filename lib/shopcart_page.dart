@@ -40,14 +40,13 @@ class _Shopping_cartState extends State<Shopping_cart> {
       widget.cartItems.clear();
     });
   }
+
   bool allProducts = false;
   bool product = true;
   List<bool> checkBoxValues = [false, false, false];
 
   @override
   Widget build(BuildContext context) {
-
-
     Widget body;
     if (widget.cartItems.isEmpty) {
       body = Center(
@@ -59,7 +58,8 @@ class _Shopping_cartState extends State<Shopping_cart> {
             children: [
               Text(
                 "${widget.cartItems.length} منتج ",
-                style: TextStyle(fontSize: 14, color: AppColors.gray1,fontFamily: 'Avenir'),
+                style: TextStyle(
+                    fontSize: 14, color: AppColors.gray1, fontFamily: 'Avenir'),
                 textDirection: TextDirection.rtl,
               ),
               Column(
@@ -75,7 +75,8 @@ class _Shopping_cartState extends State<Shopping_cart> {
                   Text(
                     "لم تقم بأضافة اي منتج الى السلة مؤخرًا",
                     style: TextStyle(
-                        fontSize: 16,fontFamily: 'Avenir',
+                        fontSize: 16,
+                        fontFamily: 'Avenir',
                         color: AppColors.textColor2,
                         fontWeight: FontWeight.w700),
                   ),
@@ -96,7 +97,8 @@ class _Shopping_cartState extends State<Shopping_cart> {
                         width: 2,
                       ),
                     ),
-                    child: Text('اذهب للتسوق الآن',style: TextStyle(fontFamily: 'Avenir')),
+                    child: Text('اذهب للتسوق الآن',
+                        style: TextStyle(fontFamily: 'Avenir')),
                   ),
                 ],
               ),
@@ -122,11 +124,13 @@ class _Shopping_cartState extends State<Shopping_cart> {
               onChanged: (value) {
                 setState(() {
                   allProducts = value!;
-                  checkBoxValues= [allProducts, allProducts, allProducts];
+                  checkBoxValues = [allProducts, allProducts, allProducts];
                 });
               },
               title: Text('${widget.cartItems.length} منتجات',
-                  style: TextStyle(fontSize: 14,fontFamily: 'Avenir', color: Colors.black),textDirection: TextDirection.rtl),
+                  style: TextStyle(
+                      fontSize: 14, fontFamily: 'Avenir', color: Colors.black),
+                  textDirection: TextDirection.rtl),
             ),
             SizedBox(
               height: 20,
@@ -134,16 +138,41 @@ class _Shopping_cartState extends State<Shopping_cart> {
             Expanded(
               child: ListView.builder(
                 itemCount: widget.cartItems.length,
-                itemBuilder: (context, index) {final cartItem = widget.cartItems[index];
-                  return Container(margin: EdgeInsets.only(bottom: 24),
-                    padding:EdgeInsets.only(right: 6, left: 6, top: 12, bottom: 12),
-                    decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(6),
-                      border: Border.all(strokeAlign: BorderSide.strokeAlignOutside,color: AppColors.stroke,
-                          width: .5,style: BorderStyle.solid),boxShadow: [
-                        BoxShadow(color: Colors.black.withOpacity(.4),blurRadius: 4,offset: Offset(1, 1),),],),
-                    child: Row(mainAxisAlignment: MainAxisAlignment.end,crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [Column(crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [ Text( cartItem.name, style: TextStyle(fontWeight: FontWeight.w400,fontSize: 14,color: AppColors.textTitle,
+                itemBuilder: (context, index) {
+                  final cartItem = widget.cartItems[index];
+                  return Container(
+                    margin: EdgeInsets.only(bottom: 24),
+                    padding:
+                        EdgeInsets.only(right: 6, left: 6, top: 12, bottom: 12),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(6),
+                      border: Border.all(
+                          strokeAlign: BorderSide.strokeAlignOutside,
+                          color: AppColors.stroke,
+                          width: .5,
+                          style: BorderStyle.solid),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(.4),
+                          blurRadius: 4,
+                          offset: Offset(1, 1),
+                        ),
+                      ],
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            Text(
+                              cartItem.name,
+                              style: TextStyle(fontFamily: 'Avenir',
+                                fontWeight: FontWeight.w400,
+                                fontSize: 14,
+                                color: AppColors.textTitle,
                               ),
                             ),
                             SizedBox(height: 4),
@@ -156,7 +185,8 @@ class _Shopping_cartState extends State<Shopping_cart> {
                                 SizedBox(width: 2),
                                 Text(
                                   ' اللون: ',
-                                  style: TextStyle(fontFamily: 'Avenir',
+                                  style: TextStyle(
+                                    fontFamily: 'Avenir',
                                     fontSize: 12,
                                     color: AppColors.text,
                                   ),
@@ -164,7 +194,8 @@ class _Shopping_cartState extends State<Shopping_cart> {
                                 SizedBox(width: 2),
                                 Text(
                                   'المقاس: ${cartItem.size} ',
-                                  style: TextStyle(fontFamily: 'Avenir',
+                                  style: TextStyle(
+                                    fontFamily: 'Avenir',
                                     fontSize: 12,
                                     color: AppColors.text,
                                   ),
@@ -191,7 +222,9 @@ class _Shopping_cartState extends State<Shopping_cart> {
                                         width: 6,
                                       ),
                                       Text('${cartItem.number}',
-                                          style: TextStyle(fontFamily: 'Avenir', fontSize: 16)),
+                                          style: TextStyle(
+                                              fontFamily: 'Avenir',
+                                              fontSize: 16)),
                                       SizedBox(
                                         width: 6,
                                       ),
@@ -210,7 +243,8 @@ class _Shopping_cartState extends State<Shopping_cart> {
                                   '\$${cartItem.price}',
                                   style: TextStyle(
                                     color: AppColors.brawn3,
-                                    fontWeight: FontWeight.w400,fontFamily: 'Avenir',
+                                    fontWeight: FontWeight.w400,
+                                    fontFamily: 'Avenir',
                                     fontSize: 18,
                                   ),
                                 ),
@@ -220,7 +254,7 @@ class _Shopping_cartState extends State<Shopping_cart> {
                         ),
 
                         Container(
-                          margin: EdgeInsets.only(left: 12,right:8 ),
+                          margin: EdgeInsets.only(left: 12, right: 8),
                           width: 112,
                           height: 80,
                           padding: EdgeInsets.all(10),
@@ -252,7 +286,6 @@ class _Shopping_cartState extends State<Shopping_cart> {
                               checkBoxValues[index] = value!;
                             });
                           },
-
                         ),
                       ],
                     ),
@@ -260,16 +293,24 @@ class _Shopping_cartState extends State<Shopping_cart> {
                 },
               ),
             ),
-            Divider(thickness: .5,color: AppColors.divider, ),
+            Divider(
+              thickness: .5,
+              color: AppColors.divider,
+            ),
             SizedBox(height: 47),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-              Text('\$${widget.cartItems.map((item) => item.totalPrice).reduce((a, b) => a + b).toStringAsFixed(2)}'),
-                  Text("التكلفة",style: TextStyle(fontFamily: 'Avenir', ),)
-
+            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+              Text(
+                  '\$${widget.cartItems.map((item) => item.totalPrice).reduce((a, b) => a + b).toStringAsFixed(2)}'),
+              Text(
+                "التكلفة",
+                style: TextStyle(
+                  fontFamily: 'Avenir',
+                ),
+              )
             ]),
-            SizedBox(height: 24,),
+            SizedBox(
+              height: 24,
+            ),
             ElevatedButton(
               onPressed: () {
                 Navigator.pushNamed(context, '/pay');
@@ -286,7 +327,7 @@ class _Shopping_cartState extends State<Shopping_cart> {
                   width: 2,
                 ),
               ),
-              child: Text('شراء',style: TextStyle(fontFamily: 'Avenir')),
+              child: Text('شراء', style: TextStyle(fontFamily: 'Avenir',)),
             ),
           ],
         ),
@@ -298,7 +339,7 @@ class _Shopping_cartState extends State<Shopping_cart> {
       appBar: AppBar(
         title: Text(
           'سلة المشتريات',
-          style: TextStyle(color: Colors.black, fontSize: 16),
+          style: TextStyle(fontFamily: 'Avenir',color: Colors.black, fontSize: 16),
         ),
         centerTitle: true,
         backgroundColor: Colors.transparent,

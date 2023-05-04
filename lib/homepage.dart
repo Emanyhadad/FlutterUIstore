@@ -71,7 +71,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                   backgroundColor: Colors.transparent,
                   elevation: 0,
                   title: Text("اهلاً وسهلاً",
-                      style: TextStyle(color: Colors.black, fontSize: 16)),
+                      style: TextStyle(fontFamily: 'Avenir',color: Colors.black, fontSize: 16)),
                   centerTitle: true,
                   leadingWidth: 20,
                   actions: [
@@ -89,8 +89,8 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
               child: ListView(
                 children: [
                   UserAccountsDrawerHeader(
-                    accountName: Text("Eman Hadad"),
-                    accountEmail: Text("Emanhadad17@gmail.com"),
+                    accountName: Text("Eman Hadad",style: TextStyle(fontFamily: 'Avenir',)),
+                    accountEmail: Text("Emanhadad17@gmail.com",style: TextStyle(fontFamily: 'Avenir',)),
                     currentAccountPicture: CircleAvatar(
                         radius: 10,
                         child: Image(
@@ -107,7 +107,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                   ),
                   ListTile(
                     title: Text(
-                      "My Profile",
+                      "My Profile",style: TextStyle(fontFamily: 'Avenir',)
                     ),
                     leading: SvgPicture.asset(
                       'assets/page1/profile.svg',
@@ -123,7 +123,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                     thickness: .5,
                   ),
                   ListTile(
-                    title: Text('Setting'),
+                    title: Text('Setting',style: TextStyle(fontFamily: 'Avenir',)),
                     leading: Icon(Icons.settings),
                     trailing: Icon(Icons.arrow_forward_ios),
                   ),
