@@ -133,176 +133,178 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                 ],
               ),
             ),
-            body: Container(
-                padding: EdgeInsets.all(20),
-                child: Column(children: [
-                  Container(
-                    height: 40,
-                    alignment: Alignment.centerRight,
-                    decoration: BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withOpacity(0.4),
-                          blurRadius: 4,
-                          spreadRadius: 0,
-                          offset: Offset(1, 1),
+            body: SingleChildScrollView(
+              child: Container(
+                  padding: EdgeInsets.all(20),
+                  child: Column(children: [
+                    Container(
+                      height: 40,
+                      alignment: Alignment.centerRight,
+                      decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.4),
+                            blurRadius: 4,
+                            spreadRadius: 0,
+                            offset: Offset(1, 1),
+                          ),
+                        ],
+                        color: Colors.white,
+                        border: Border.all(
+                          color: AppColors.searchBorder,
+                          width: .5,
                         ),
-                      ],
-                      color: Colors.white,
-                      border: Border.all(
-                        color: AppColors.searchBorder,
-                        width: .5,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(35),
+                        ),
                       ),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(35),
-                      ),
-                    ),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Expanded(
-                          child: TextField(
-                            textDirection: TextDirection.ltr,
-                            textAlign: TextAlign.end,
-                            decoration: InputDecoration(
-                              contentPadding: EdgeInsets.only(
-                                top: 9,
-                                right: 8,
-                                left: 8,
-                                bottom: 9,
-                              ),
-                              hintText: 'ابحث عن تيشرتات ،قمصان..',
-                              border: InputBorder.none, // hide the bottom line
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 12),
-                          child: SizedBox(
-                            width: .5,
-                            height: 40,
-                            child: Container(
-                              color: AppColors.search,
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: SvgPicture.asset(
-                            'assets/page1/search.svg',
-                            width: 21,
-                            height: 21,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-              SizedBox(
-                height: 198,
-                child: Stack(
-                  children: [
-                    Expanded(
-                      child: PageView(
-                        controller: _pageController,
-                        onPageChanged: (index) {
-                          setState(() {
-                            _currentPage = index;
-                          });
-                        },
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                          _buildContainer(AppColors.brawn2),
-                          _buildContainer(AppColors.lightBrawn2),
-                          _buildContainer(AppColors.brawn),
-                          _buildContainer(AppColors.lightBrawn),
+                          Expanded(
+                            child: TextField(
+                              textDirection: TextDirection.ltr,
+                              textAlign: TextAlign.end,
+                              decoration: InputDecoration(
+                                contentPadding: EdgeInsets.only(
+                                  top: 9,
+                                  right: 8,
+                                  left: 8,
+                                  bottom: 9,
+                                ),
+                                hintText: 'ابحث عن تيشرتات ،قمصان..',
+                                border: InputBorder.none, // hide the bottom line
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 12),
+                            child: SizedBox(
+                              width: .5,
+                              height: 40,
+                              child: Container(
+                                color: AppColors.search,
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: SvgPicture.asset(
+                              'assets/page1/search.svg',
+                              width: 21,
+                              height: 21,
+                            ),
+                          ),
                         ],
                       ),
                     ),
-                    Positioned(
-                      height: 30,
-                      width: 30,
-                      bottom: 32,
-                      right: 21,
-                      child: Stack(
-                        children: [
-                          for (int i = 0; i < 4; i++)
-                            AnimatedContainer(
-                              duration: Duration(milliseconds: 300),
-                              margin: EdgeInsets.only(left: i * 8.0),
-                              height: 3,
-                              width: 3,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: _currentPage == i
-                                    ? Colors.white
-                                    : Colors.white.withOpacity(0.5),
-                              ),
-                            ),
-                        ],
+                SizedBox(
+                  height: 198,
+                  child: Stack(
+                    children: [
+                      Expanded(
+                        child: PageView(
+                          controller: _pageController,
+                          onPageChanged: (index) {
+                            setState(() {
+                              _currentPage = index;
+                            });
+                          },
+                          children: [
+                            _buildContainer(AppColors.brawn2),
+                            _buildContainer(AppColors.lightBrawn2),
+                            _buildContainer(AppColors.brawn),
+                            _buildContainer(AppColors.lightBrawn),
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.only(left: 10, right: 10),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(35),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(.4),
-                      blurRadius: 4,
-                      offset: Offset(1, 1),
-                    )
-                  ],
-                  border: Border.all(
-                    width: .5,
-                    color: AppColors.tabBorder,
-                    style: BorderStyle.solid,
-                  ),
-                ),
-                child: DefaultTabController(
-                  length: 3,
-                  child: TabBar(
-                    indicator: BoxDecoration(
-                      color: Colors.brown,
-                      borderRadius: BorderRadius.circular(35),
-                    ),
-                    indicatorColor: AppColors.secondaryColor,
-                    labelColor: Colors.white,
-                    controller: controllerTab,
-                    unselectedLabelColor: Colors.brown,
-                    tabs: [
-                      Tab(text: 'وصل حديثًا', height: 48),
-                      Tab(text: 'الأكثر مبيعًا', height: 48),
-                      Tab(text: 'العروض', height: 48),
+                      Positioned(
+                        height: 30,
+                        width: 30,
+                        bottom: 32,
+                        right: 21,
+                        child: Stack(
+                          children: [
+                            for (int i = 0; i < 4; i++)
+                              AnimatedContainer(
+                                duration: Duration(milliseconds: 300),
+                                margin: EdgeInsets.only(left: i * 8.0),
+                                height: 3,
+                                width: 3,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: _currentPage == i
+                                      ? Colors.white
+                                      : Colors.white.withOpacity(0.5),
+                                ),
+                              ),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ),
-              ),
-
-              SingleChildScrollView(
-                    child: Container(
-                      height:530,
-                      width: double.infinity,
-                      margin: EdgeInsets.only(top: 18),
-                      child: GridView.builder(
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2,
-                            childAspectRatio: 0.75,
-                            mainAxisSpacing: 20,
-                            crossAxisSpacing: 10),
-                        itemCount: products.length,
-                        itemBuilder: (BuildContext context, int index) {
-                          return Row(
-                            children: [
-                              Expanded(
-                                child: ItemProduct(product: products[index]),),],);},),
+                Container(
+                  padding: EdgeInsets.only(left: 10, right: 10),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(35),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(.4),
+                        blurRadius: 4,
+                        offset: Offset(1, 1),
+                      )
+                    ],
+                    border: Border.all(
+                      width: .5,
+                      color: AppColors.tabBorder,
+                      style: BorderStyle.solid,
                     ),
                   ),
+                  child: DefaultTabController(
+                    length: 3,
+                    child: TabBar(
+                      indicator: BoxDecoration(
+                        color: Colors.brown,
+                        borderRadius: BorderRadius.circular(35),
+                      ),
+                      indicatorColor: AppColors.secondaryColor,
+                      labelColor: Colors.white,
+                      controller: controllerTab,
+                      unselectedLabelColor: Colors.brown,
+                      tabs: [
+                        Tab(text: 'وصل حديثًا', height: 48),
+                        Tab(text: 'الأكثر مبيعًا', height: 48),
+                        Tab(text: 'العروض', height: 48),
+                      ],
+                    ),
+                  ),
+                ),
 
-                ])));
+                SingleChildScrollView(
+                      child: Container(
+                        height:530,
+                        width: double.infinity,
+                        margin: EdgeInsets.only(top: 18),
+                        child: GridView.builder(
+                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2,
+                              childAspectRatio: 0.75,
+                              mainAxisSpacing: 20,
+                              crossAxisSpacing: 10),
+                          itemCount: products.length,
+                          itemBuilder: (BuildContext context, int index) {
+                            return Row(
+                              children: [
+                                Expanded(
+                                  child: ItemProduct(product: products[index]),),],);},),
+                      ),
+                    ),
+
+                  ])),
+            ));
 
   }
   Widget _buildContainer(Color color) {
