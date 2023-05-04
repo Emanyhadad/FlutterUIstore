@@ -52,13 +52,12 @@ class _ItemProductState extends State<ItemProduct> {
                   child:
                   CircleAvatar(
                     backgroundColor: Colors.white,
-                    radius: 14,
-                    child: Checkbox(
-                      value: Favorite, onChanged: (value) {
-                      setState(() {
-                        Favorite = value!;
-                      });
-                    },),
+                    radius: 18,
+                    child:SvgPicture.asset(
+                      'assets/page1/like.svg',
+                      width: 20,
+                      height: 20,
+                    ),
                   ),
                 ),
                 if (widget.product.isNew) ...[
@@ -133,8 +132,7 @@ class _ItemProductState extends State<ItemProduct> {
                       'قريبًا',
                       style: TextStyle(color: Colors.white),
                     ),
-                  ),
-                ],
+                  ),],
                 if(widget.product.discount !=0)...[
                   Positioned(
                     left:8 ,

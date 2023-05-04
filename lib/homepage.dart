@@ -36,7 +36,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
       imagePath: 'assets/page1/product3.png',
       isNew: false,
       isTrending: false,
-      willBeAddedSoon: true,
+      willBeAddedSoon: false,
       discount: 20,
     ),
     Product(
@@ -244,34 +244,47 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                   ],
                 ),
               ),
-                  Container(
-                    // padding: EdgeInsets.only(left: 10,right: 10),
-                    // decoration: BoxDecoration(
-                    //   color: Colors.white,
-                    //   borderRadius: BorderRadius.circular(35),
-                    //   boxShadow: [BoxShadow(color: Colors.black.withOpacity(.4),blurRadius: 4,offset: Offset(1,1),)],
-                    //   border: Border.all(width: .5,color: AppColors.tabBorder,strokeAlign: 24),
-                    // ),
-                    child: DefaultTabController(length: 3,
-                    child: TabBar(
-                      indicator: BoxDecoration(
-                        color: Colors.brown,
-                        borderRadius: BorderRadius.circular(35),
-                      ),
-                      indicatorColor: AppColors.secondaryColor,
-                      labelColor: Colors.white,
-                      controller: controllerTab,
-                      unselectedLabelColor: Colors.brown,
-                      tabs: [
-                        Tab(text: 'Section 1',height:48 ),
-                        Tab(text: 'Section 2',height:48),
-                        Tab(text: 'Section 3',height:48),
-                      ],
-                    ),),
+              Container(
+                padding: EdgeInsets.only(left: 10, right: 10),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(35),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(.4),
+                      blurRadius: 4,
+                      offset: Offset(1, 1),
+                    )
+                  ],
+                  border: Border.all(
+                    width: .5,
+                    color: AppColors.tabBorder,
+                    style: BorderStyle.solid,
                   ),
-                  SingleChildScrollView(
+                ),
+                child: DefaultTabController(
+                  length: 3,
+                  child: TabBar(
+                    indicator: BoxDecoration(
+                      color: Colors.brown,
+                      borderRadius: BorderRadius.circular(35),
+                    ),
+                    indicatorColor: AppColors.secondaryColor,
+                    labelColor: Colors.white,
+                    controller: controllerTab,
+                    unselectedLabelColor: Colors.brown,
+                    tabs: [
+                      Tab(text: 'وصل حديثًا', height: 48),
+                      Tab(text: 'الأكثر مبيعًا', height: 48),
+                      Tab(text: 'العروض', height: 48),
+                    ],
+                  ),
+                ),
+              ),
+
+              SingleChildScrollView(
                     child: Container(
-                      height:330,
+                      height:530,
                       width: double.infinity,
                       margin: EdgeInsets.only(top: 18),
                       child: GridView.builder(

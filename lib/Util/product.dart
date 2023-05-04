@@ -17,5 +17,5 @@ class Product {
     this.discount = 0.0, required bool willBeAddedSoon,
   });
 
-  get willBeAddedSoon => true;
+  get willBeAddedSoon => false;
 }
