@@ -13,21 +13,21 @@ class Shopping_cart extends StatefulWidget {
         color: '0xFF1E1E1E',
         price: 18.0,
         quantity: 1,
-        image: '/page1/product1.png'),
+        image: 'assets/page1/product1.png'),
     CartItem(
         name: 'Product 2',
         size: 38,
         color: '0xFFCE2621',
         price: 30.0,
         quantity: 1,
-        image: '/page1/product1.png'),
+        image: 'assets/page1/product1.png'),
     CartItem(
         name: 'Product 3',
         size: 39,
         color: '0xFFCE2621',
         price: 15.0,
         quantity: 1,
-        image: '/page1/product1.png'),
+        image: 'assets/page1/product1.png'),
   ];
 
   @override
@@ -66,7 +66,7 @@ class _Shopping_cartState extends State<Shopping_cart> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Image(
-                      image: AssetImage('/page2/img.png'),
+                      image: AssetImage('assets/page2/img.png'),
                       height: 247,
                       width: 200),
                   SizedBox(

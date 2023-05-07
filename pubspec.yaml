@@ -67,30 +67,10 @@ flutter:
           - asset: assets/fonts/avenir.otf
 
   assets:
-    - assets/page1/bag.svg
-    - assets/page1/cart.svg
-    - assets/page1/cart2.svg
-    - assets/page1/drawer.svg
-    - assets/page1/favorite.svg
-    - assets/page1/fire.svg
-    - assets/page1/home.svg
-    - assets/page1/like.svg
-    - assets/page1/notifications.svg
-    - assets/page1/profile.svg
-    - assets/page1/search.svg
-    - assets/page1/star.svg
-    - assets/page1/product1.png
-    - assets/page1/product2.png
-    - assets/page1/product3.png
-    - assets/page1/product4.png
-    - assets/page1/girl.png
-    - assets/page2/delete.svg
-    - assets/page2/add.svg
-    - assets/page2/remove.svg
-    - assets/page2/img.png
-    - assets/page3/edit.svg
-    - assets/page3/pay.svg
-    - assets/page3/pin.svg
+    - assets/page1
+    - assets/page2
+    - assets/page3
+
 
 
 

@@ -36,103 +36,97 @@ class _MyHomePageState extends State<MyHomePage0> {
   @override
   Widget build(BuildContext context) {
     return
-      Directionality(
-        textDirection: TextDirection.rtl,
-        child: MaterialApp(
-          debugShowCheckedModeBanner: false,
-        home: Scaffold(
-          backgroundColor: AppColors.screen,
-          body: Pages[Index],
-          bottomNavigationBar: BottomNavigationBar(
-            onTap: onTabTapped,
-            currentIndex: Index,
-            backgroundColor: Colors.transparent,
-            selectedItemColor: AppColors.brawn2,
-            items: [
-              BottomNavigationBarItem(
-                activeIcon:SvgPicture.asset(
+      Scaffold(
+        backgroundColor: AppColors.screen,
+        body: Pages[Index],
+        bottomNavigationBar: BottomNavigationBar(
+          onTap: onTabTapped,
+          currentIndex: Index,
+          backgroundColor: Colors.transparent,
+          selectedItemColor: AppColors.brawn2,
+          items: [
+            BottomNavigationBarItem(
+              activeIcon:SvgPicture.asset(
+              'assets/page1/profile.svg',
+                width: 20,
+                height: 20,
+                color: AppColors.brawn,
+
+        ) ,
+              icon: SvgPicture.asset(
                 'assets/page1/profile.svg',
-                  width: 20,
-                  height: 20,
-                  color: AppColors.brawn,
-
-          ) ,
-                icon: SvgPicture.asset(
-                  'assets/page1/profile.svg',
-                  width: 20,
-                  height: 20,
-                ),
-                label: '.',
-              ),
-              BottomNavigationBarItem(
-                activeIcon: SvgPicture.asset(
-              'assets/page1/bag.svg',
-              width: 20,
-              height: 20,
-              color: AppColors.brawn,
-
-                ) ,
-                  icon:  SvgPicture.asset(
-                'assets/page1/bag.svg',
                 width: 20,
                 height: 20,
               ),
-                  label: ''
+              label: '.',
+            ),
+            BottomNavigationBarItem(
+              activeIcon: SvgPicture.asset(
+            'assets/page1/bag.svg',
+            width: 20,
+            height: 20,
+            color: AppColors.brawn,
+
+              ) ,
+                icon:  SvgPicture.asset(
+              'assets/page1/bag.svg',
+              width: 20,
+              height: 20,
+            ),
+                label: ''
+            ),
+            BottomNavigationBarItem(
+              activeIcon:SvgPicture.asset(
+                'assets/page1/cart2.svg',
+                width: 20,
+                height: 20,
+                color: AppColors.brawn,
+
+              ) ,
+
+              icon:SvgPicture.asset(
+                'assets/page1/cart2.svg',
+                width: 20,
+                height: 20,
+
               ),
-              BottomNavigationBarItem(
-                activeIcon:SvgPicture.asset(
-                  'assets/page1/cart2.svg',
-                  width: 20,
-                  height: 20,
-                  color: AppColors.brawn,
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              activeIcon:SvgPicture.asset(
+                'assets/page1/favorite.svg',
+                width: 20,
+                height: 20,
+                color: AppColors.brawn,
 
-                ) ,
+              ) ,
 
-                icon:SvgPicture.asset(
-                  'assets/page1/cart2.svg',
-                  width: 20,
-                  height: 20,
-
-                ),
-                label: '',
+              icon:SvgPicture.asset(
+                'assets/page1/favorite.svg',
+                width: 20,
+                height: 20,
               ),
-              BottomNavigationBarItem(
-                activeIcon:SvgPicture.asset(
-                  'assets/page1/favorite.svg',
-                  width: 20,
-                  height: 20,
-                  color: AppColors.brawn,
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              activeIcon:SvgPicture.asset(
+                'assets/page1/home.svg',
+                width: 20,
+                height: 20,
+                color: AppColors.brawn,
 
-                ) ,
+              ) ,
 
-                icon:SvgPicture.asset(
-                  'assets/page1/favorite.svg',
-                  width: 20,
-                  height: 20,
-                ),
-                label: '',
+              icon: SvgPicture.asset(
+                'assets/page1/home.svg',
+                width: 20,
+                height: 20,
+
               ),
-              BottomNavigationBarItem(
-                activeIcon:SvgPicture.asset(
-                  'assets/page1/home.svg',
-                  width: 20,
-                  height: 20,
-                  color: AppColors.brawn,
-
-                ) ,
-
-                icon: SvgPicture.asset(
-                  'assets/page1/home.svg',
-                  width: 20,
-                  height: 20,
-
-                ),
-                label: '',
-              ),
-            ],
-          ),
+              label: '',
+            ),
+          ],
         ),
-    ),
       );
   }
 }

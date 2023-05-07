@@ -94,14 +94,14 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                     currentAccountPicture: CircleAvatar(
                         radius: 10,
                         child: Image(
-                          image: AssetImage('/page1/girl.png'),
+                          image: AssetImage('assets/page1/girl.png'),
                         )),
                     currentAccountPictureSize: Size(80, 80),
                     otherAccountsPictures: [
                       CircleAvatar(
                           radius: 10,
                           child: Image(
-                            image: AssetImage('/page1/girl.png'),
+                            image: AssetImage('assets/page1/girl.png'),
                           )),
                     ],
                   ),
@@ -282,27 +282,21 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                     ),
                   ),
                 ),
-
-                SingleChildScrollView(
-                      child: Container(
-                        height:530,
-                        width: double.infinity,
-                        margin: EdgeInsets.only(top: 18),
-                        child: GridView.builder(
-                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 2,
-                              childAspectRatio: 0.75,
-                              mainAxisSpacing: 20,
-                              crossAxisSpacing: 10),
-                          itemCount: products.length,
-                          itemBuilder: (BuildContext context, int index) {
-                            return Row(
-                              children: [
-                                Expanded(
-                                  child: ItemProduct(product: products[index]),),],);},),
-                      ),
-                    ),
-
+                SizedBox(height: 16,),
+                    GridView.builder(
+                      shrinkWrap: true,
+                      physics: AlwaysScrollableScrollPhysics(),
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2,
+                          childAspectRatio: 0.75,
+                          mainAxisSpacing: 20,
+                          crossAxisSpacing: 10),
+                      itemCount: products.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Row(
+                          children: [
+                            Expanded(
+                              child: ItemProduct(product: products[index]),),],);},),
                   ])),
             ));
 
@@ -321,7 +315,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           Positioned(
             top: 21,
             child: Image(
-              image: AssetImage('/page1/girl.png'),
+              image: AssetImage('assets/page1/girl.png'),
               width: 193,
               height: 115,
             ),
