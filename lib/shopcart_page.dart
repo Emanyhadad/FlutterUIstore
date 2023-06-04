@@ -107,8 +107,6 @@ class _Shopping_cartState extends State<Shopping_cart> {
         ),
       );
     } else {
-      // Show the list of items in the cart
-      var cartItem;
       body = Container(
         padding: EdgeInsets.all(20),
         height: double.infinity,

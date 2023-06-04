@@ -67,9 +67,9 @@ flutter:
           - asset: assets/fonts/avenir.otf
 
   assets:
-    - assets/page1
-    - assets/page2
-    - assets/page3
+    - assets/page1/
+    - assets/page2/
+    - assets/page3/
 
 
 

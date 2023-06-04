@@ -12,21 +12,21 @@ class tryy extends StatelessWidget {
         color: '0xFF1E1E1E',
         price: 18.0,
         quantity: 1,
-        image: '/page1/product1.png'),
+        image: 'assets/page1/product1.png'),
     CartItem(
         name: 'Product 2',
         size: 38,
         color: '0xFFCE2621',
         price: 30.0,
         quantity: 1,
-        image: '/page1/product1.png'),
+        image: 'assets/page1/product2.png'),
     CartItem(
         name: 'Product 3',
         size: 39,
         color: '0xFFCE2621',
         price: 15.0,
         quantity: 1,
-        image: '/page1/product1.png'),
+        image: 'assets/page1/product1.png'),
   ];
   late double tax,pay;
 

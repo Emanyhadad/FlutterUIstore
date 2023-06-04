@@ -10,7 +10,8 @@ class HomePage extends StatefulWidget {@override State<HomePage> createState() =
 
 
 class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin{
-  PageController controller = PageController(initialPage: 0);late TabController controllerTab;
+  PageController controller = PageController(initialPage: 0);
+  late TabController controllerTab;
   final List<Product> products = [
     Product(
       name: 'حذاء رياضي',
